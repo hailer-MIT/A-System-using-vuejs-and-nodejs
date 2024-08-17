@@ -8,6 +8,18 @@ type Contact struct {
     Phone   string
 }
 
+// ... rest of your code
+
+func editContact(contacts []Contact, name string, newContact Contact) []Contact {
+    for i, contact := range contacts {
+        if contact.Name == name {
+            contacts[i] = newContact
+            return contacts
+        }
+    }
+    return contacts
+}
+
 func main() {
     contacts := []Contact{
         {"John Doe", "johndoe@example.com", "1234567890"},
